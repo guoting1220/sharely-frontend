@@ -1,0 +1,5 @@
+/* nav a { margin-right: 1em; } */
+
+nav a.active { 
+  font-weight: bold; 
+}
