@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import LoadingSpinner from "./LoadingSpinner";
 import { getTokenFromLSAndGetCurrentUserFromAPI } from '../actions/userActions';
-import { fetchTitlesFromAPI } from '../actions/titlesActions';
+// import { fetchTitlesFromAPI } from '../actions/titlesActions';
 
 
 import './App.css';
@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     const loadUserInfo = async () => {
       await dispatch(getTokenFromLSAndGetCurrentUserFromAPI());
-      await dispatch(fetchTitlesFromAPI());
+      // await dispatch(fetchTitlesFromAPI());
       setInfoLoaded(true);
     };
 

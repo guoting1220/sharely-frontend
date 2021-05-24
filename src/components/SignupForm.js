@@ -2,7 +2,8 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import SharelyApi from '../api/api';
-import { getTokenFromLSAndGetCurrentUserFromAPI, signUp } from '../actions/userActions';
+import { getTokenFromLSAndGetCurrentUserFromAPI } from '../actions/userActions';
+import { fetchTitlesFromAPI } from '../actions/titlesActions';
 import { showErr } from '../actions/errorsActions';
 import { Formik, Form } from 'formik';
 import { TextField } from './formField';
@@ -26,6 +27,7 @@ const SignupForm = () => {
       let token = await SharelyApi.signup(userData);
       window.localStorage.setItem("sharely-token", token);
       await dispatch(getTokenFromLSAndGetCurrentUserFromAPI());
+      await dispatch(fetchTitlesFromAPI());
       history.push('/posts')
     }
     catch (errors) {

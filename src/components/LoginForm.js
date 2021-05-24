@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import SharelyApi from '../api/api';
-import { getTokenFromLSAndGetCurrentUserFromAPI, logIn } from '../actions/userActions';
+import { getTokenFromLSAndGetCurrentUserFromAPI } from '../actions/userActions';
 import { showErr } from '../actions/errorsActions';
+import { fetchTitlesFromAPI } from '../actions/titlesActions';
+
 
 
 const LoginForm = () => {
@@ -30,8 +32,9 @@ const LoginForm = () => {
       let token = await SharelyApi.login(formData);
       window.localStorage.setItem("sharely-token", token);
       await dispatch(getTokenFromLSAndGetCurrentUserFromAPI());
+      await dispatch(fetchTitlesFromAPI());
       history.push('/posts');
-      setFormData(initialFormData);
+      // setFormData(initialFormData);
     }
     catch (errors) {
       console.error("Login failed", errors);

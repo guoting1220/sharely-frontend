@@ -27,7 +27,7 @@ const Post = () => {
     // [dispatch, post, postId]
     // if include "post" in the dependencies, when delete a post, the post changes, will run the function inside useEffect again, therefore dispatch the FETCH_POST, and return undefined:"", error
 
-    [dispatch, postId]
+    [dispatch, post, postId]
   );
 
   const toggleEdit = () => {
