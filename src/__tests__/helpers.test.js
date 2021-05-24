@@ -5,7 +5,7 @@ describe("get frequency counter", function () {
   test("works", function () {
     const result = getFrequencyCounter([
       { "id": 1, "title": "t1" },
-      { "id": 2, "title": "t2" },
+      { "id": 2, "title":   "t2" },
       { "id": 3, "title": "t1" },
     ], "title", "id");
     expect(result).toEqual(

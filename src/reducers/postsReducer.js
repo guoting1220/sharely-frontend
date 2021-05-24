@@ -1,8 +1,5 @@
 import { FETCH_POST, ADD_POST, UPDATE_POST, DELETE_POST, ADD_COMMENT, DELETE_COMMENT } from '../actions/actionTypes'
 
-
-
-
 export default function postsReducer(state = {}, action) {
   /* make deep copy of original state */
   const copyState = () => {

@@ -46,9 +46,9 @@ const NavBar = () => {
             Deals
             </NavLink>
         </li>
-        <li className="nav-item mr-4">
+        <li className="nav-item mx-4 border border-secondary rounded-pill">
           <NavLink className="nav-link" exact to="/new">
-            New Post
+            Add New Post
             </NavLink>
         </li>
         {/* <li className="nav-item mr-4">
@@ -56,7 +56,7 @@ const NavBar = () => {
             My Profile
             </NavLink>
         </li> */}
-        <li className="nav-item">
+        <li className="nav-item ml-5">
           <Link className="nav-link" exact to="/" onClick={logOut}>
             Log out {username}
           </Link>

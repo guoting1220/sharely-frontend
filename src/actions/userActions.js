@@ -26,7 +26,7 @@ export const getTokenFromLSAndGetCurrentUserFromAPI = () => (
   }
 )
 
-const fetchCurrentUserAndToken = (token, currentUser) => (
+export const fetchCurrentUserAndToken = (token, currentUser) => (
   {
     type: FETCH_CURRENT_USER_AND_TOKEN,
     token,
@@ -49,7 +49,7 @@ export const logout = () => (
   }
 )
 
-const removeCurrentUserAndToken = () => (
+export const removeCurrentUserAndToken = () => (
   {
     type: REMOVE_CURRENT_USER_AND_TOKEN
   }
@@ -110,7 +110,7 @@ export const likePost = (username, postId) => (
   }
 )
 
-const like = (postId) => (
+export const like = (postId) => (
   {
     type: LIKE,
     postId
@@ -132,7 +132,7 @@ export const unLikePost = (username, postId) => (
   }
 )
 
-const unlike = (postId) => (
+export const unlike = (postId) => (
   {
     type: UNLIKE,
     postId
@@ -154,7 +154,7 @@ export const sendInvite = (username, postId, postOwner) => (
   }
 )
 
-const invite = (postId, postOwner) => (
+export const invite = (postId, postOwner) => (
   {
     type: INVITE,
     postId,
@@ -177,7 +177,7 @@ export const removeInvite = (username, postId) => (
   }
 )
 
-const deleteInvite = (postId) => (
+export const deleteInvite = (postId) => (
   {
     type: REMOVE_INVITE,
     postId

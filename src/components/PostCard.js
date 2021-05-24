@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import LikeTag from './LikeTag';
 import InviteBtn from './InviteBtn';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { defaultImageForFailedLoading } from '../config';
 
 

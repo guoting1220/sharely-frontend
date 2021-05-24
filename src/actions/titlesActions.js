@@ -23,7 +23,7 @@ export const fetchTitlesFromAPI = () => (
 )
 
 /* normal action creators  */
-const getTitltes = (titles) => (
+export const getTitltes = (titles) => (
   {
     type: FETCH_TITLES,
     titles

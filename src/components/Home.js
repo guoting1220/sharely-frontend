@@ -10,7 +10,7 @@ const Home = () => {
   const logInAndSignUpBtns = !token ?
     <div>
       <Link exact to="/login">
-        <button className="btn btn-primary mx-4 my-5">Log in</button>
+        <button className="btn btn-primary mx-4 my-2">Log in</button>
       </Link>
       <Link exact to="/signup">
         <button className="btn btn-primary">Sign up</button>
@@ -19,9 +19,9 @@ const Home = () => {
     : null;
 
   return (
-    <div  className="Home d-flex align-items-center vh-100">
-      <div className="container" >
-        <h1 className="my-5">Welcome to Bay Sharing!</h1>
+    <div  className="Home d-flex align-items-center vh-100 ">
+      <div className="container bg-light border rounded py-5" >
+        <h1 className="mb-5">Welcome to Bay Sharing!</h1>
         <p>
           The best place to find other people and families to share your belongings in Bay Area!
         </p>

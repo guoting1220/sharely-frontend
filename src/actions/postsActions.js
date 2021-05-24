@@ -19,7 +19,7 @@ export const getPostFromAPI = (id) => (
   }
 )
 
-const fetchPost = (post) => (
+export const fetchPost = (post) => (
   {
     type: FETCH_POST,
     post
@@ -42,7 +42,7 @@ export const sendPostToAPI = (postData) => (
   }
 )
 
-const addNewPost = (postData) => (
+export const addNewPost = (postData) => (
   {
     type: ADD_POST,
     postData
@@ -65,7 +65,7 @@ export const updatePostInAPI = (postId, postData) => (
   }
 )
 
-const updatePost = (postId, postData) => (
+export const updatePost = (postId, postData) => (
   {
     type: UPDATE_POST,
     postId,
@@ -89,7 +89,7 @@ export const deletePostFromAPI = (id) => (
   }
 )
 
-const removePost = (postId) => (
+export const removePost = (postId) => (
   {
     type: DELETE_POST,
     postId
@@ -112,7 +112,7 @@ export const sendCommentToAPI = (postId, text) => (
   }
 )
 
-const addComment = (postId, commentData) => (
+export const addComment = (postId, commentData) => (
   {
     type: ADD_COMMENT,
     postId,
@@ -136,7 +136,7 @@ export const deleteCommentFromAPI = (postId, commentId) => (
   }
 )
 
-const deleteComment = (postId, commentId) => (
+export const deleteComment = (postId, commentId) => (
   {
     type: DELETE_COMMENT,
     commentId,

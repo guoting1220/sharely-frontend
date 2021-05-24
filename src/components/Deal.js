@@ -10,7 +10,7 @@ const Deal = ({ username, sentInvitePostIds, receivedInvitePostIds }) => {
 
   const sendEmail = async () => {
     try {
-      const { email } = await SharelyApi.fetchEmail(username);
+      const  email  = await SharelyApi.fetchEmail(username);
       window.open(`mailto:${email}`);
     }
     catch (errors) {
