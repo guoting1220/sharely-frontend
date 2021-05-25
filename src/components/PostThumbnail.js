@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import InviteBtn from './InviteBtn';
 import { defaultImageForFailedLoading } from '../config';
 
 
@@ -11,7 +12,7 @@ const PostThumbnail = ({ id }) => {
 
   return (
     <div className="PostThumbnail mx-1">
-      <div className="card" style={{ width: '6rem' }}>
+      <div className="card mb-1" style={{ width: '6rem' }}>
         <Link className="link" exact to={`/posts/${id}`}>
           <img
             src={title.imgUrl}
@@ -30,6 +31,7 @@ const PostThumbnail = ({ id }) => {
           </Link>
         </div>
       </div>
+      <InviteBtn postId={id} postOwner={title.username} />
     </div>
   );
 }

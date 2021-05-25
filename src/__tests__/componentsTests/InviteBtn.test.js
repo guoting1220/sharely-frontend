@@ -52,7 +52,7 @@ describe("render InviteBtn component", () => {
         }
       }
     );
-    expect(screen.queryByText("Invite")).toBeInTheDocument()
+    expect(screen.queryByText("Invite")).toBeInTheDocument();
   });
 
   it("renders with invite sent button", function () {

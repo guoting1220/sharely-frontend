@@ -11,11 +11,11 @@ const PostCard = ({ id, itemName, username, postDate, city, imgUrl, category, ag
 
   return (
     <div className="PostCard col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-      <div className="card" style={{ width: '15rem' }}>
+      <div className="card mx-auto" style={{ width: '15rem' }}>
         <Link className="link" exact to={`/posts/${id}`}>
           <img
             src={imgUrl}
-            className="card-img-top"
+            className="card-img-top d-block"
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = defaultImageForFailedLoading

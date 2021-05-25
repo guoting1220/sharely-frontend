@@ -46,7 +46,7 @@ const Post = () => {
   }
 
   const cancel = () => {
-    history.push(`/${postId}`);
+    history.push(`/posts/${postId}`);
     setIsEditing(false);
   }
 

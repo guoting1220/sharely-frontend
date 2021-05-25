@@ -26,7 +26,7 @@ const PostDetail = ({ id, post, toggleEdit }) => {
         <div className="col-6 mx-auto">
           <img 
           src={imgUrl} 
-          className="img-thumbnail mx-auto" 
+          className="img-thumbnail mx-auto d-block" 
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = defaultImageForFailedLoading
@@ -44,7 +44,7 @@ const PostDetail = ({ id, post, toggleEdit }) => {
           : null
         }
 
-        <h2>{itemName}</h2>
+        <h4>{itemName}</h4>
 
         <p>{description}</p>
 

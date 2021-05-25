@@ -30,7 +30,7 @@ function SearchForm({ searchFor }) {
   }
 
   return (
-      <div className="SearchForm mb-4">
+      <div className="SearchForm mb-4 w-75 mx-auto">
         <form className="form-inline" onSubmit={handleSubmit}>
           <input
               className="form-control form-control flex-grow-1"
