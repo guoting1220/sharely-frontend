@@ -13,6 +13,7 @@ import SentInvites from './SentInvites';
 import ReceivedInviteList from './ReceivedInviteList';
 import TitleListForUser from './TitleListForUser';
 import DealList from './DealList';
+import GroupedTitles from './GroupedTitles';
 
 
 const Routes = () => {
@@ -62,9 +63,13 @@ const Routes = () => {
         <Post />
       </PrivateRoute>
 
-      <PrivateRoute exact path="/posts/user/:username">
+      <Route exact path="/posts/user/:username">
         <TitleListForUser />
-      </PrivateRoute>
+      </Route>
+
+      <Route exact path="/posts/:grouptype/:value">
+        <GroupedTitles />
+      </Route>
 
       <PrivateRoute exact path="/deals">
         <DealList />

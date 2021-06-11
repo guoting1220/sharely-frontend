@@ -5,7 +5,7 @@ import CommentForm from './CommentForm';
 const CommentList = ({ postId, comments }) => {
   return (
     <div className="CommentList w-50 mx-auto">
-      <h5 className="text-secondary text-left">Comments:</h5>
+      <h6 className="text-secondary text-left">Comments:</h6>
 
       <CommentForm postId={postId} />
 

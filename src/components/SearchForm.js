@@ -18,7 +18,7 @@ function SearchForm({ searchFor }) {
 
   /** Tell parent to filter */
   function handleSubmit(evt) {
-    evt.preventDefault();    
+    evt.preventDefault();
     // take care of accidentally trying to search for just spaces
     searchFor(searchTerm.trim() || undefined);
     setSearchTerm("");
@@ -30,20 +30,20 @@ function SearchForm({ searchFor }) {
   }
 
   return (
-      <div className="SearchForm mb-4 w-75 mx-auto">
-        <form className="form-inline" onSubmit={handleSubmit}>
-          <input
-              className="form-control form-control flex-grow-1"
-              name="searchTerm"
-              placeholder="Enter search term.."
-              value={searchTerm}
-              onChange={handleChange}
-          />
-          <button type="submit" className="btn btn-outline btn-secondary">
+    <div className="SearchForm mb-4 w-75 mx-auto">
+      <form className="d-flex form-inline justify-content-center w-100 input-group" onSubmit={handleSubmit}>
+        <input
+          className="form-control flex-grow-1"
+          name="searchTerm"
+          placeholder="Enter search term..."
+          value={searchTerm}
+          onChange={handleChange}
+        />
+        <button type="submit" className="btn btn-outline btn-secondary">
           <i className="fas fa-search"></i>
-          </button>
-        </form>
-      </div>
+        </button>
+      </form>
+    </div>
   );
 }
 

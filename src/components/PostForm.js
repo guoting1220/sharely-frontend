@@ -55,7 +55,7 @@ const PostForm = ({ save, cancel, title, post = {} }) => {
                   <SelectField label="Category" name="category" type="select" value={values.category} onChange={handleChange} options={[
                     { value: 'toy', label: 'Toy' },
                     { value: 'book', label: 'Book' },
-                    { value: 'school supplies', label: 'School supplies' },
+                    { value: 'stationery', label: 'Stationery' },
                     { value: 'tool', label: 'Tool' },
                     { value: 'game', label: 'Game' },
                     { value: 'sport', label: 'Sport' },

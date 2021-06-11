@@ -4,6 +4,7 @@ import { sendInvite, removeInvite } from '../actions/userActions';
 
 const InviteBtn = ({ postId, postOwner }) => {
   const currentUserName = useSelector(store => store.user.username);
+
   const sentInvitePostIds = (useSelector(store => store.user.sentInvites)).map(invite => invite.postId);
   const sentIdSet = new Set(sentInvitePostIds);
 
@@ -12,9 +13,9 @@ const InviteBtn = ({ postId, postOwner }) => {
   /* the text and style of the invite button is decided whether the post 
   is invited or not */
   const inviteBtn = sentIdSet.has(postId) ?
-    <div className="btn btn-sm btn-success">Invite Sent</div>
+    <div className="btn btn-sm btn-success" data-toggle="tooltip" title="cancel invite">Invite Sent</div>
     :
-    <div className="btn btn-sm btn-outline-success">Invite</div>
+    <div className="btn btn-sm btn-outline-success" data-toggle="tooltip" title="send invite">Invite</div>
 
   const toggleInvite = () => {
     if (!sentIdSet.has(postId)) {
@@ -24,8 +25,8 @@ const InviteBtn = ({ postId, postOwner }) => {
       dispatch(removeInvite(currentUserName, postId));
   }
 
-/* the invite button is hidden for the current user's posts 
-(the user can not invite themselve's posts) */
+  /* the invite button is hidden for the current user's posts 
+  (the user can not invite themselve's posts) */
   if (postOwner === currentUserName) return null;
 
   return (

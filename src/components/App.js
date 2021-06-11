@@ -3,8 +3,6 @@ import { useDispatch } from 'react-redux';
 import LoadingSpinner from "./LoadingSpinner";
 import { getTokenFromLSAndGetCurrentUserFromAPI } from '../actions/userActions';
 import { fetchTitlesFromAPI } from '../actions/titlesActions';
-
-
 import './App.css';
 import NavBar from './NavBar';
 import Alert from './Alert';
@@ -16,18 +14,17 @@ function App() {
 
   // Load user info from API. Until a user is logged in and they have a token, this should not run. It only needs to re-run when a user logs out, so the value of the token is a dependency for this effect.
 
-
   useEffect(() => {
-    const loadUserInfo = async () => {
+    const loadUserAndPostsInfo = async () => {
       await dispatch(getTokenFromLSAndGetCurrentUserFromAPI());
       await dispatch(fetchTitlesFromAPI());
       setInfoLoaded(true);
     };
 
-    // set infoLoaded to false while async loadUserInfo runs; once the
+    // set infoLoaded to false while async loadUserAndPostsInfo runs; once the
     // data is fetched (or even if an error happens!), this will be set back to true to control the spinner.
     setInfoLoaded(false)
-    loadUserInfo();
+    loadUserAndPostsInfo();
   }, [dispatch]);
 
   if (!infoLoaded) return <LoadingSpinner />;

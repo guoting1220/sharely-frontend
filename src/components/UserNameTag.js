@@ -9,11 +9,11 @@ const UserNameTag = ({ username }) => {
   }
 
   return (
-    <div
-      className="UserNameTag btn text-warning font-weight-bold ml-1"
+    <i
+      className="UserNameTag text-primary font-weight-bold ml-1"
       onClick={getTitleListByUsername}>
       {username}
-    </div>
+    </i>
   )
 }
 

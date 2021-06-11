@@ -7,7 +7,6 @@ import LoadingSpinner from "./LoadingSpinner";
 import { fetchTitlesFromAPI } from '../actions/titlesActions';
 
 
-
 const AllTitles = () => {
   const titles = useSelector(store => store.titles);
   const [selectedTitles, setSelectedTitles] = useState(titles);

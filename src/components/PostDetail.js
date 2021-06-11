@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { deletePostFromAPI } from '../actions/postsActions';
 import LikeTag from './LikeTag';
+import GroupTag from './GroupTag';
+import UserNameTag from './UserNameTag';
 import InviteBtn from './InviteBtn';
 import { defaultImageForFailedLoading } from '../config';
 
@@ -22,18 +24,18 @@ const PostDetail = ({ id, post, toggleEdit }) => {
 
   return (
     <div className="PostDetail d-flex justify-content-center">
-      <div className="w-50 card mt-3 p-3 row">
-        <div className="col-6 mx-auto">
-          <img 
-          src={imgUrl} 
-          className="img-thumbnail mx-auto d-block" 
+      <div className="w-50 card mt-3 p-3">
+        <div className="w-75 mx-auto">
+          <img
+            src={imgUrl}
+            className="img-thumbnail mx-auto d-block"
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = defaultImageForFailedLoading
             }}
-          alt="Loading..."></img>
+            alt="Loading..."></img>
         </div>
-        
+
         <LikeTag postId={id} />
 
         {currentUsername === post.username ?
@@ -44,25 +46,29 @@ const PostDetail = ({ id, post, toggleEdit }) => {
           : null
         }
 
-        <h4>{itemName}</h4>
+        <h5>{itemName}</h5>
 
         <p>{description}</p>
 
         <InviteBtn postId={id} postOwner={username} />
-        <div className="d-flex justify-content-around w-50 mx-auto">
-          <p><b>Category</b>:<span className="mr-2 ml-1 badge badge-secondary font-weight-normal">{category}</span></p>
-          <p><b>Age</b>:<span className="ml-1 badge badge-info font-weight-normal">{ageGroup}</span></p>
+
+        <div className="container row text-center mt-3 mx-auto d-flex justify-content-between">
+          <small className="col-md-6 col-lg-4">
+            Category:<GroupTag grouptype="category" value={category} color="warning" />
+          </small>
+          <small className="col-md-6 col-lg-4">
+            Age:<GroupTag grouptype="ageGroup" value={ageGroup} color="info" />
+          </small>          
+          <small className="col-md-6 col-lg-4">
+            City: <GroupTag grouptype="city" value={city} color="success" />
+          </small>
+          <small className="col-md-6 col-lg-4">
+            User: <UserNameTag username={username} />
+          </small>
+          <small className="col-md-6 col-lg-4"><i>{postDate}</i></small>
         </div>
 
-        <div className="d-flex w-50 justify-content-around mx-auto">
-          <small className="card-text">
-            User: <i className="text-warning">{username}</i>
-          </small>
-          <small className="card-text">
-            Location: <i className="text-success">{city}</i>
-          </small>
-          <small><i className="">{postDate}</i></small>
-        </div>
+
       </div>
     </div>
   )

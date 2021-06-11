@@ -68,6 +68,11 @@ const NavBar = () => {
   function loggedOutNav() {
     return (
       <ul className="navbar-nav ml-auto">
+        <li className="nav-item mr-5">
+          <NavLink className="nav-link" exact to="/posts">
+            All Items
+            </NavLink>
+        </li>
         <li className="nav-item mr-4">
           <NavLink className="nav-link" to="/login">
             Login

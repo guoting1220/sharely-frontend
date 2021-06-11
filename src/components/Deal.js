@@ -21,29 +21,34 @@ const Deal = ({ username, sentInvitePostIds, receivedInvitePostIds }) => {
 
 
   return (
-    <div className="Deal bg-light p-1 my-3 border round">
-      <p className="font-weight-bold">
+    <div className="Deal bg-light p-3 my-3 border round">
+      <p className="font-weight-bold d-inline">
         You can make a deal with <UserNameTag username={username} />
       </p>
+      {/* <span className="btn btn-sm btn-warning align-self-end ml-auto ml-3"
+        onClick={sendEmail}>
+        Contact <i className="font-weight-bold">{username}</i>
+      </span> */}
+      <i className="far fa-envelope fa-lg ml-4 text-success" onClick={sendEmail} data-toggle="tooltip" title={`Contact ${username}`}></i>
 
-      <div className="d-flex justify-content-center my-2 pl-5 pr-2">
+      <div className="d-flex justify-content-left my-2 p-3">
         <div className="received align-self-center border d-flex p-2 bg-info">
           {receivedInvitePostIds.map(pid =>
             <PostThumbnail key={pid} id={pid} />
           )}
         </div>
-        <div className=" align-self-center">
+
+        <div className="align-self-center">
           <i className="fas fa-exchange-alt text-success fa-2x m-3"></i>
         </div>
+
         <div className="sent align-self-center border d-flex p-2 bg-warning">
           {sentInvitePostIds.map(pid =>
             <PostThumbnail key={pid} id={pid} />
           )}
         </div>
-        <div className="btn btn-sm btn-success align-self-end ml-auto"
-          onClick={sendEmail}>
-          Contact <i className="text-warning font-weight-bold">{username}</i>
-        </div>
+
+        
       </div>
     </div>
   )

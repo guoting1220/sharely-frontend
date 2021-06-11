@@ -15,8 +15,8 @@ const TitleListForUser = () => {
     : <TitleList titles={selectedTitles} />
 
   return (
-    <div className="Likes container">
-      <h3 className="my-4">Posts from <i className="text-warning font-weight-bold">{username}</i>: </h3>
+    <div className="TitleListForUser container">
+      <h4 className="my-4">Posts from <i className="text-primary font-weight-bold">{username} </i> : </h4>
       <hr />
       {titlesForUser}
     </div>
