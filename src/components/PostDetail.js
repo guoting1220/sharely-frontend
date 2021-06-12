@@ -23,8 +23,8 @@ const PostDetail = ({ id, post, toggleEdit }) => {
   }
 
   return (
-    <div className="PostDetail d-flex justify-content-center">
-      <div className="w-50 card mt-3 p-3">
+    <div className="PostDetail row d-flex justify-content-center">
+      <div className="col-8 card mt-3 p-3">
         <div className="w-75 mx-auto">
           <img
             src={imgUrl}
@@ -52,20 +52,20 @@ const PostDetail = ({ id, post, toggleEdit }) => {
 
         <InviteBtn postId={id} postOwner={username} />
 
-        <div className="container row text-center mt-3 mx-auto d-flex justify-content-between">
-          <small className="col-md-6 col-lg-4">
+        <div className="container row text-center mt-3 mx-auto d-flex justify-content-center">
+          <small className="col-md-6 col-lg-3">
             Category:<GroupTag grouptype="category" value={category} color="warning" />
           </small>
-          <small className="col-md-6 col-lg-4">
+          <small className="col-md-6 col-lg-3">
             Age:<GroupTag grouptype="ageGroup" value={ageGroup} color="info" />
           </small>          
-          <small className="col-md-6 col-lg-4">
+          <small className="col-md-6 col-lg-3">
             City: <GroupTag grouptype="city" value={city} color="success" />
           </small>
-          <small className="col-md-6 col-lg-4">
+          <small className="col-md-6 col-lg-3">
             User: <UserNameTag username={username} />
           </small>
-          <small className="col-md-6 col-lg-4"><i>{postDate}</i></small>
+          <small className="col-md-6 col-lg-3"><i>{postDate}</i></small>
         </div>
 
 

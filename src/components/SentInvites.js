@@ -15,7 +15,7 @@ const SentInvites = () => {
 
   return (
     <div className="Likes container">
-      <h3 className="my-4">Sent Invites: </h3>
+      <h4 className="my-4">Sent Invites: </h4>
       <hr/>
       {invites}
     </div>

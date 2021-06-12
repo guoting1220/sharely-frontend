@@ -37,7 +37,7 @@ const DealList = () => {
 
   return (
     <div className="Likes container">
-      <h3 className="my-4">Deals: </h3>
+      <h4 className="my-4">Deals: </h4>
       <hr />
       {deals}
     </div>

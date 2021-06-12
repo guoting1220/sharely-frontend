@@ -36,7 +36,7 @@ const ReceivedInviteList = () => {
 
   return (
     <div className="Likes container">
-      <h3 className="my-4">Received Invites: </h3>
+      <h4 className="my-4">Received Invites: </h4>
       <hr />
       {receivedGroupedInvites}
     </div>

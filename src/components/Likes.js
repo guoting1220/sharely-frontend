@@ -14,7 +14,7 @@ const Likes = () => {
 
   return (
     <div className="Likes container">
-      <h3 className="my-4">Favorite Posts: </h3>
+      <h4 className="my-4">Favorite Posts: </h4>
       <hr/>
       {myLikes}
     </div>

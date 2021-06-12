@@ -12,26 +12,27 @@ const PostThumbnail = ({ id }) => {
 
   return (
     <div className="PostThumbnail mx-1">
-      <div className="card mb-1" style={{ width: '6rem' }}>
+      <div className="card mb-1" style={{ width: '8rem' }}>
         <Link className="link" exact to={`/posts/${id}`}>
           <img
             src={title.imgUrl}
-            className="card-img-top h-25"
+            className="card-img-top"
+            style={{ 'height': '6rem' }}
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = defaultImageForFailedLoading
             }}
-            alt="...">
+            alt={title.itemName}>
           </img>
         </Link>
 
         <div className="card-body p-1">
           <Link className="link" exact to={`/posts/${id}`}>
-            <small className="card-text">{title.itemName}</small>
+            <small className="card-text my-2 d-block">{title.itemName}</small>
           </Link>
+          <InviteBtn postId={id} postOwner={title.username} />
         </div>
       </div>
-      <InviteBtn postId={id} postOwner={title.username} />
     </div>
   );
 }

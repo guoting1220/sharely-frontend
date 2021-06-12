@@ -12,8 +12,8 @@ const PostCard = ({ id, itemName, username, postDate, city, imgUrl, category, ag
   const currentUserName = useSelector(store => store.user.username);
 
   return (
-    <div className="PostCard col-sm-6 col-md-4 col-lg-3 mb-3">
-      <div className="card mx-auto" style={{ 'width': '15rem' }}>
+    <div className="PostCard col-sm-6 col-md-4 col-lg-3 mb-3 ">
+      <div className="card mx-auto" style={{ 'width': '16rem' }}>
         <Link className="link" exact to={`/posts/${id}`}>
           <img
             src={imgUrl}
@@ -30,30 +30,25 @@ const PostCard = ({ id, itemName, username, postDate, city, imgUrl, category, ag
         {/* {currentUserName && <LikeTag postId={id} />} */}
         <LikeTag postId={id} />
 
-        <div className="p-3">
+        <div className="p-2">
           <Link className="link" exact to={`/posts/${id}`}>
             <h5 className="card-title mb-1">{itemName}</h5>
           </Link>
 
           <div className="row">
-            <small className="col">
+            <small className="col-md-6 ">
               Category:<GroupTag grouptype="category" value={category} color="warning" />
             </small>
-            <small className="col">
+            <small className="col-md-6 ">
               Age:<GroupTag grouptype="ageGroup" value={ageGroup} color="info" />
             </small>
-          </div>
-          
-          <div className="row">
-            <small className="col">
+            <small className="col-md-6 ">
               City:<GroupTag grouptype="city" value={city} color="success" />
             </small>
-            <small className="col text-muted"text-muted>
+            <small className="col-md-6 text-muted" text-muted>
               <i>{postDate}</i>
             </small>
           </div>
-
-
 
           <hr />
           {currentUserName && <InviteBtn postId={id} postOwner={username} />}

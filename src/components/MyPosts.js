@@ -16,7 +16,7 @@ const MyPosts = () => {
 
   return (
     <div className="MyPosts container">
-      <h3 className="my-4">My Posts: </h3>
+      <h4 className="my-4">My Posts: </h4>
       <hr/>
       {myPosts}
     </div>
