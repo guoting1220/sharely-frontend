@@ -30,17 +30,17 @@ const Deal = ({ username, sentInvitePostIds, receivedInvitePostIds }) => {
       </div>
 
       <div className="row container mx-auto d-flex justify-content-center">
-        <div className="received col-5 row align-self-center border rounded p-2">      
+        <div className="received col-5 row justify-content-start border rounded p-2">
           {receivedInvitePostIds.map(pid =>
             <PostThumbnail key={pid} id={pid} />
           )}
         </div>
 
-        <div className="col-2 align-self-center">
-          <i className="fas fa-exchange-alt text-success fa-2x m-3"></i>
+        <div className="col-2 align-self-center mx-2">
+          <i className="fas fa-exchange-alt text-success fa-2x "></i>
         </div>
 
-        <div className="col-5 sent align-self-center border rounded p-2 ">
+        <div className="sent col-5 row justify-content-start border rounded p-2 ">
           {sentInvitePostIds.map(pid =>
             <PostThumbnail key={pid} id={pid} />
           )}

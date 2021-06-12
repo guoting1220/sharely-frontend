@@ -11,13 +11,13 @@ const PostThumbnail = ({ id }) => {
   const title = titles.filter(title => title.id === id)[0];
 
   return (
-    <div className="PostThumbnail mx-1">
-      <div className="card mb-1" style={{ width: '8rem' }}>
+    <div className="PostThumbnail m-1">
+      <div className="card mb-1" style={{ width: '7rem' }}>
         <Link className="link" exact to={`/posts/${id}`}>
           <img
             src={title.imgUrl}
             className="card-img-top"
-            style={{ 'height': '6rem' }}
+            style={{ 'height': '5.5rem' }}
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = defaultImageForFailedLoading
