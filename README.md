@@ -1,8 +1,8 @@
-# Sharely
+# Bay Sahring
 
-Sharely is a single page application providing a platform where the users can share their items with other people or families in the Bay Area.
+Bay Sharing is a single page application providing a platform where the users can share their items with other people or families in the Bay Area.
 
-### tech stack 
+### Tech stack 
 frontend: React.js, Redux, Bootstrap
 backend: Express, Node.js, PostgreSQL
 
